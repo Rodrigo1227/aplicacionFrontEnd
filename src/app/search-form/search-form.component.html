@@ -1,0 +1,14 @@
+<!-- search-form.component.html -->
+<div class="search-container">
+  <h2>Buscar Película</h2>
+  <form (ngSubmit)="search()" [formGroup]="searchForm" class="search-form">
+    <mat-form-field>
+      <input matInput
+             placeholder="Título de la película"
+             formControlName="searchTerm"
+             required>
+      <mat-error *ngIf="searchForm.get('searchTerm')?.hasError('required')">Este campo es requerido</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!searchForm.valid">Buscar</button>
+  </form>
+</div>

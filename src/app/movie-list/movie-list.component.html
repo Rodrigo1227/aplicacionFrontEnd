@@ -1,0 +1,20 @@
+
+
+<div class="movie-list">
+  <h2>Resultados de la Búsqueda</h2>
+  <div *ngIf="movies && movies.length > 0; else noResults">
+    <mat-list>
+      <mat-list-item *ngFor="let movie of movies">
+        <img src="https://image.tmdb.org/t/p/w220_and_h330_face/" alt="">
+        <h3 mat-line>{{ movie.title }}</h3>
+        <p mat-line>Fecha de Estreno: {{ movie.release_date }}</p>
+        <p mat-line>{{ movie.overview }}</p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <ng-template #noResults>
+    <p>No se encontraron resultados.</p>
+  </ng-template>
+</div>
+
+  
